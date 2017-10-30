@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029141341) do
+ActiveRecord::Schema.define(version: 20171030100400) do
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "course_name"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20171029141341) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "student_courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "student_id"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "fk_student_courses_course"
+    t.index ["student_id"], name: "fk_student_courses_student"
   end
 
   create_table "students", primary_key: "users_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -55,5 +64,7 @@ ActiveRecord::Schema.define(version: 20171029141341) do
 
   add_foreign_key "courses", "faculties", primary_key: "users_id", name: "fk_courses_faculties"
   add_foreign_key "faculties", "users", column: "users_id"
+  add_foreign_key "student_courses", "courses", name: "fk_student_courses_course"
+  add_foreign_key "student_courses", "students", primary_key: "users_id", name: "fk_student_courses_student"
   add_foreign_key "students", "users", column: "users_id"
 end

@@ -26,6 +26,8 @@ class StudentCoursesController < ApplicationController
   def create
     @student_course = StudentCourse.new(student_course_params)
 
+    @student_course.student_id = current_user.id
+
     respond_to do |format|
       if @student_course.save
         format.html { redirect_to @student_course, notice: 'Student course was successfully created.' }
@@ -59,6 +61,10 @@ class StudentCoursesController < ApplicationController
       format.html { redirect_to student_courses_url, notice: 'Student course was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def indexStu
+    @student_course = StudentCourse.where(:student_id => current_user.id)
   end
 
   private

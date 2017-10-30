@@ -10,10 +10,10 @@ class CreateStudentCourses < ActiveRecord::Migration[5.1]
 
     execute <<-SQL
       ALTER TABLE student_courses
-        ADD CONSTRAINT fk_student-courses_course
+        ADD CONSTRAINT fk_student_courses_course
         FOREIGN KEY (course_id)
-        REFERENCES courses(id)
-        ADD CONSTRAINT fk_student-courses_student
+        REFERENCES courses(id),
+        ADD CONSTRAINT fk_student_courses_student
         FOREIGN KEY (student_id)
         REFERENCES students(users_id)
 
