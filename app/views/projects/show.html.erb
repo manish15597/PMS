@@ -25,5 +25,8 @@
   <%= @project.team_id %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Edit', edit_project_path(@project) %>
+<%= link_to 'Back', student_myproject_path %>
+<%= link_to 'Submission', make_submit_path(@project.id) if @project.isapproved == "YES" %>
+
+

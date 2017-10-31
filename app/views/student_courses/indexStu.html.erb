@@ -5,7 +5,6 @@
 <table>
   <thead>
   <tr>
-    <th>Student</th>
     <th>Course</th>
     <th colspan="3"></th>
   </tr>
@@ -14,8 +13,7 @@
   <tbody>
   <% @student_course.each do |student_course| %>
       <tr>
-        <td><%= student_course.student_id %></td>
-        <td><%= student_course.course_id %></td>
+        <td><%= Course.find(student_course.course_id).course_name %></td>
         <td><%= link_to 'Show', student_course %></td>
         <td><%= link_to 'Edit', edit_student_course_path(student_course) %></td>
         <td><%= link_to 'Destroy', student_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +24,5 @@
 
 <br>
 
-<%= link_to 'New Student Course', new_student_course_path %>
+<!--ang_brac_here%= link_to 'New Student Course', new_student_course_path %>-->
+<%= link_to "Choose Course", choose_course_path, :class => 'navbar-link' %>

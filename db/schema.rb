@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030171245) do
+ActiveRecord::Schema.define(version: 20171031170627) do
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "course_name"
@@ -63,6 +63,15 @@ ActiveRecord::Schema.define(version: 20171030171245) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "submissions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "project_id"
+    t.text "report"
+    t.text "feedback"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "fk_submissions_project"
+  end
+
   create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -98,4 +107,5 @@ ActiveRecord::Schema.define(version: 20171030171245) do
   add_foreign_key "student_teams", "students", primary_key: "users_id", name: "fk_student_teams_student"
   add_foreign_key "student_teams", "teams", name: "fk_student_teams_team"
   add_foreign_key "students", "users", column: "users_id"
+  add_foreign_key "submissions", "projects", name: "fk_submissions_project"
 end

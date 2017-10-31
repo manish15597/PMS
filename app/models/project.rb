@@ -5,4 +5,6 @@ class Project < ApplicationRecord
 
   validates_uniqueness_of :team_id, scope: :course_id
 
+  has_many :submissions, foreign_key: :project_id, class_name: "Submission"
+
 end

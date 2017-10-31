@@ -65,6 +65,10 @@ class ProjectsController < ApplicationController
 
   end
 
+  def indexStu
+    @projects = Project.where(team_id: StudentTeam.select(:team_id).where(student_id: current_user.id) )
+  end
+
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
