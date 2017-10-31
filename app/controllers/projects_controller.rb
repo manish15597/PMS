@@ -52,10 +52,18 @@ class ProjectsController < ApplicationController
     end
   end
 
-  #def approve
-    #@sub = Course.where(:faculty_id => current_user.id)
+  def view
+    @sub_proj = Project.where(:course_id => params[:id])
 
-#  end
+  end
+
+  def approve
+    @project = Project.find(params[:id])
+    @project.update(isapproved: "YES")
+
+    redirect_to "/users/facuty/#{@project.course_id}/view_project"
+
+  end
 
   # DELETE /projects/1
   # DELETE /projects/1.json
