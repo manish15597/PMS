@@ -41,6 +41,6 @@ Rails.application.routes.draw do
 
 
   #get "users/student/new_project" => "projects#new", :as => "new_project"
-  get "users/facuty/approve_project" => "projects#approve", :as => "approve_project"
+ # get "users/facuty/approve_project" => "projects#approve", :as => "approve_project"
 
 end

@@ -52,10 +52,10 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def approve
-    @sub = Course.where(:faculty_id => current_user.id)
-    
-  end
+  #def approve
+    #@sub = Course.where(:faculty_id => current_user.id)
+
+#  end
 
   # DELETE /projects/1
   # DELETE /projects/1.json
