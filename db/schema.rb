@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030124014) do
+ActiveRecord::Schema.define(version: 20171030171245) do
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "course_name"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20171030124014) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.text "abstract"
+    t.string "isapproved"
+    t.bigint "course_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "fk_projects_course"
+    t.index ["team_id"], name: "fk_projects_team"
   end
 
   create_table "student_courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -79,6 +91,8 @@ ActiveRecord::Schema.define(version: 20171030124014) do
 
   add_foreign_key "courses", "faculties", primary_key: "users_id", name: "fk_courses_faculties"
   add_foreign_key "faculties", "users", column: "users_id"
+  add_foreign_key "projects", "courses", name: "fk_projects_course"
+  add_foreign_key "projects", "teams", name: "fk_projects_team"
   add_foreign_key "student_courses", "courses", name: "fk_student_courses_course"
   add_foreign_key "student_courses", "students", primary_key: "users_id", name: "fk_student_courses_student"
   add_foreign_key "student_teams", "students", primary_key: "users_id", name: "fk_student_teams_student"

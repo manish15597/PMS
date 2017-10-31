@@ -27,6 +27,11 @@ class StudentTeamsController < ApplicationController
     @student_team = StudentTeam.new(student_team_params)
 
     respond_to do |format|
+     # if !(StudentTeam.where("student_id = ? AND team_id = ?", student_team_params[:student_id], student_team_params[:team_id]).empty?)
+      #  @student_team.errors =
+       # format.html { render :new }
+        #format.json { render json: @student_team.errors, status: :unprocessable_entity }
+
       if @student_team.save
         format.html { redirect_to @student_team, notice: 'Student team was successfully created.' }
         format.json { render :show, status: :created, location: @student_team }

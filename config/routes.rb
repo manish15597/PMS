@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :projects
   resources :student_teams
   resources :teams
   resources :student_courses
@@ -38,5 +39,8 @@ Rails.application.routes.draw do
   get "users/student/create_team" => "teams#new", :as => "create_team"
 	get "users/student/add_teammates" => "student_teams#new", :as => "add_teammates"
 
+
+  #get "users/student/new_project" => "projects#new", :as => "new_project"
+  get "users/facuty/approve_project" => "projects#approve", :as => "approve_project"
 
 end
