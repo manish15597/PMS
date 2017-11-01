@@ -28,8 +28,7 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
 
     respond_to do |format|
-      if @submission
-             .save
+      if @submission.save
         format.html { redirect_to @submission, notice: 'Submission was successfully created.' }
         format.json { render :show, status: :created, location: @submission }
       else
@@ -63,6 +62,17 @@ class SubmissionsController < ApplicationController
     end
   end
 
+  def show_project_submissions
+    @ps = Submission.where(project_id: params[:id])
+  end
+
+  def feedback
+
+  end
+
+  def edit_feedback
+
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_submission

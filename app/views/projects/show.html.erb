@@ -27,6 +27,6 @@
 
 <%= link_to 'Edit', edit_project_path(@project) %>
 <%= link_to 'Back', student_myproject_path %>
-<%= link_to 'Submission', make_submit_path(@project.id) if @project.isapproved == "YES" %>
+<%= link_to 'Submission', make_submit_path(@project.id) if @project.isapproved == "YES" and Student.where(users_id: current_user.id).size == 1%>
 
-
+<%= link_to 'Check Submission', show_project_submissions_path(@project.id) if @project.isapproved == "YES" and Faculty.where(users_id: current_user.id).size == 1%>
