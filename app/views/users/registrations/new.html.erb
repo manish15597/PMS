@@ -1,51 +1,75 @@
+<style >
+
+  body{
+    
+  }
+
+  div.font_color{
+    color: #0d47a1
+  }
+
+</style>
+
 <head>
   <%= stylesheet_link_tag "register" %>
 </head>
 
-<body>
-  <h2>Register</h2>
+<body >
+
+  <center >
+
+    <h1>Project Management System</h1>
+
+    <div style=" width:800px; border: 3px solid orange; ">
+
+      <h2>Register</h2><br /><br />
+
+        <div class="font_color">
+          
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="field">
+              <%= f.label :name %>
+              <%= f.text_field :name, autofocus: true %><br /><br />
+            </div>
+
+            <div class="field">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true %><br /><br />
+            </div>
+
+
+            <div class="field">
+              <%= f.label :usertype %>
+              <em style="color: #616161">(Enter 0 if student, 1 if facutly)<br /></em>
+              <%= f.text_field :usertype, autofocus: true %><br /><br />
+            </div>
+
+
+            <div class="field">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em style="color: #616161">(<%= @minimum_password_length %> characters minimum)<br /></em>
+              <% end %>
+              <%= f.password_field :password, autocomplete: "off" %><br /><br />
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Sign up" %>
+            </div>
+          <% end %>
+
+          <%= render "users/shared/links" %>  
+
+        </div>
+        
+
+      
+    </div>
+      
+  </center>
   
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true %>
-    </div>
-
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-
-
-    <div class="field">
-      <%= f.label :usertype %><br />
-      <em>(Enter 0 if student, 1 if facutly)</em><br>
-      <%= f.text_field :usertype, autofocus: true %>
-    </div>
-
-
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-  <% end %>
-
-  <%= render "users/shared/links" %>  
 </body>
-
 
 
