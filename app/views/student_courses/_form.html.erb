@@ -18,7 +18,7 @@
 
   <div class="form-row">
     <%= form.label :course_id %>
-    <%= form.collection_select( :course_name, Course.where.not(:id => StudentCourse.select("course_id").where(:student_id => current_user.id)), :id, :id ) %>
+    <%= form.collection_select(  :course_id, Course.where.not(:id => StudentCourse.select("course_id").where(:student_id => current_user.id)), :id, :course_name ) %>
   </div>
 
   <div class="actions form-row">
