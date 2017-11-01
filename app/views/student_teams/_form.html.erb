@@ -1,0 +1,30 @@
+<%= form_with(model: student_team, local: true) do |form| %>
+  <% if student_team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student_team.errors.count, "error") %> prohibited this student_team from being saved:</h2>
+
+      <ul>
+      <% student_team.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :student_id %>
+    <%= form.number_field :student_id, id: :student_team_student_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :team_id %>
+    <!--angular bracket will be here%= form.number_field :team_id, id: :student_team_team_id %>-->
+
+    <%= form.collection_select( :team_id,  StudentTeam.where(:student_id => current_user.id), :team_id, :team_id )%>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

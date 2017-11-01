@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030100400) do
+ActiveRecord::Schema.define(version: 20171031170627) do
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "course_name"
@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 20171030100400) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.text "abstract"
+    t.string "isapproved"
+    t.bigint "course_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "fk_projects_course"
+    t.index ["team_id"], name: "fk_projects_team"
+  end
+
   create_table "student_courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "student_id"
     t.bigint "course_id"
@@ -35,9 +47,33 @@ ActiveRecord::Schema.define(version: 20171030100400) do
     t.index ["student_id"], name: "fk_student_courses_student"
   end
 
+  create_table "student_teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "student_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["student_id"], name: "fk_student_teams_student"
+    t.index ["team_id"], name: "fk_student_teams_team"
+  end
+
   create_table "students", primary_key: "users_id", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.integer "reg_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "submissions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "project_id"
+    t.text "report"
+    t.text "feedback"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "fk_submissions_project"
+  end
+
+  create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,7 +100,12 @@ ActiveRecord::Schema.define(version: 20171030100400) do
 
   add_foreign_key "courses", "faculties", primary_key: "users_id", name: "fk_courses_faculties"
   add_foreign_key "faculties", "users", column: "users_id"
+  add_foreign_key "projects", "courses", name: "fk_projects_course"
+  add_foreign_key "projects", "teams", name: "fk_projects_team"
   add_foreign_key "student_courses", "courses", name: "fk_student_courses_course"
   add_foreign_key "student_courses", "students", primary_key: "users_id", name: "fk_student_courses_student"
+  add_foreign_key "student_teams", "students", primary_key: "users_id", name: "fk_student_teams_student"
+  add_foreign_key "student_teams", "teams", name: "fk_student_teams_team"
   add_foreign_key "students", "users", column: "users_id"
+  add_foreign_key "submissions", "projects", name: "fk_submissions_project"
 end

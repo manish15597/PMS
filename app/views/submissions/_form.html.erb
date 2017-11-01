@@ -1,0 +1,31 @@
+<%= form_with(model: submission, local: true) do |form| %>
+  <% if submission.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
+
+      <ul>
+      <% submission.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :project_id %>
+
+    <%= params[:id] %>
+    <%= form.hidden_field :project_id ,:submission_project_id => params[:id] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :report %>
+    <%= form.text_area :report, id: :submission_report %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

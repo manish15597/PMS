@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @student_team.student_id %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @student_team.team_id %>
+</p>
+
+<!--ang_brac_here%= link_to 'Edit', edit_student_team_path(@student_team) %>--> |
+<!--ang_brac_here%= link_to 'Back', student_teams_path %>-->
+
+<%= link_to "Create Team", create_team_path, :class => 'navbar-link' %>
+<%= link_to "Add teamate", add_teammates_path, :class => 'navbar-link' %>

@@ -27,13 +27,28 @@
               </td>    
               <td>
                 <%= link_to "Choose Course", choose_course_path, :style => 'height: 100%; width: 100%; display: table;'  %>          
-              </td>                        
+              </td>
             </tr>
             <tr >
               <td >
                 <%= link_to "My Courses", student_mycourse_path, :style => 'height: 100%; width: 100%; display: table;'  %>
+              </td> 
+              <td >
+                <%= link_to "Create Team", create_team_path, :class => 'navbar-link' %>
               </td>              
-            </tr>
+            </tr>          
+            <tr >
+              <td >
+                <%= link_to "Add teamate", add_teammates_path, :class => 'navbar-link' %>
+              </td> 
+              <td >
+                <%= link_to "New Project", new_project_path, :class => 'navbar-link' %>
+              </td>              
+            </tr>            
+            <tr >
+              <td >
+                <%= link_to "My Projects", student_myproject_path, :class => 'navbar-link' %>
+              </td> 
           </table>     
 
 
@@ -53,7 +68,6 @@
               </td>              
             </tr>
           </table>    
-
 
         <% else %>
           <%= link_to "Sign up", new_user_registration_path, :class => 'button medium square orange'  %> |
