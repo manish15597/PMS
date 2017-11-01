@@ -23,7 +23,7 @@
         <td><%= project.course_id %></td>
         <td><%= project.team_id %></td>
         <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Approve', approve_project_path(project) %></td>
+        <td><%= link_to 'Approve', approve_project_path(project), :onclick => "return openPopup(this)" %></td>
 
       </tr>
   <% end %>
@@ -31,3 +31,13 @@
 </table>
 
 <br>
+
+<script type="text/javascript">
+  function openPopup(link)
+  {
+    a = sweetAlert("Approved!")
+    // a.close();
+    setTimeout(function(){a.close();},1000);
+    return false;
+  }
+</script>

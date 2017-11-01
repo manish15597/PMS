@@ -9,15 +9,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil"> -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster"> -->
   </head>
 
   <body>
   
     <div class="header wrapper1">
       <strong class="one" style="font-size: 30px;"><%= "Welcome " + current_user.name %></strong>
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'button medium square orange two', :style => ' float:right; margin: 10px;' %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'button medium square orange three', :style => ' float:right; margin: 10px;' %>      
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'button medium square orange two', :style => ' float:right; margin: 10px; font-family: "Allerta Stencil", Sans-serif; font-weight: 800; ' %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'button medium square orange three', :style => ' float:right; margin: 10px;font-family: "Allerta Stencil", Sans-serif; font-weight: 800; ' %>      
     </div>
   
       <div >
@@ -61,7 +61,7 @@
                 <%= link_to "Edit Faculty Details", edit1_faculty_path, :class => "random"  %>
               </td>    
               <td>
-                <%= link_to "Create Course", create_course_path, :class => "random", :onclick => 'return openPopup(this);' %>
+                <%= link_to "Create Course", create_course_path, :class => "random" %>
               </td>                        
             </tr>
             <tr >
@@ -96,6 +96,7 @@
   td{
     width:50%;
     height: 45px;
+    border-radius: 10px;
   }
   .random{
     text-decoration: none;
@@ -107,5 +108,6 @@
     font-weight: 800; 
     color:#607d8b;
     padding-top:30px;
+    margin:10px;
   }
 </style>

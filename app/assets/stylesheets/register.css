@@ -1,6 +1,6 @@
 
 .orange {
-  background-color: #999
+  background-color: #999;
 }
 
 .square {
@@ -42,9 +42,6 @@
   color: #444;
   cursor: pointer;
   display: inline-block;
-  font-family: sans-serif;
-  font-size: 1em;
-  font-weight: bold;
   line-height: 1.5;
   padding: 0.5em 1.5em 0.75em;
   position: relative;
@@ -52,6 +49,7 @@
   text-decoration: none;
   text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.25);
   vertical-align: middle;
+  font-size:125%;
 }
 .button:hover {
   outline: none;
@@ -92,7 +90,7 @@
 }
 .two { 
   height: 25px;
-  grid-column: 23 / 27;
+  grid-column: 22 / 27;
   grid-row: 1 ;
 }
 .three {
@@ -192,9 +190,8 @@ td {
   font-weight:300;
   font-size:18px;
   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-  border-right: 1px solid #C1C3D1;
-  border-radius: 10px;
-  margin:10px;
+  border-right: 1px solid #C1C3D1;  
+  
 }
 
 td:last-child {
@@ -233,7 +230,7 @@ td.text-right {
 .form-basic{
     max-width: 640px;
     margin: 0 auto;
-    padding: 55px;
+    padding: 30px ;
     box-sizing: border-box;
 
     background-color:  #ffffff;
@@ -241,6 +238,7 @@ td.text-right {
 
     font: bold 14px sans-serif;
     text-align: center;
+
 }
 
 .form-basic .form-row{
@@ -264,6 +262,7 @@ td.text-right {
     border-bottom: 2px solid #6caee0;
     margin: 0;
 }
+
 
 .form-basic .form-row > label span{
     display: inline-block;
@@ -295,6 +294,7 @@ td.text-right {
 }
 
 .form-basic select{
+    min-width: 300px;
     background-color: #ffffff;
     color:  #5f5f5f;
     box-sizing: border-box;

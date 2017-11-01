@@ -67,7 +67,7 @@ class FacultiesController < ApplicationController
     if @faculty.size == 0
       redirect_to new_faculty_url
     else
-      redirect_to edit_faculty_url
+      redirect_to edit_faculty_url(current_user.id)
     end
 
   end

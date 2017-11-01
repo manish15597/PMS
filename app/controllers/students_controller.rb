@@ -67,7 +67,7 @@ class StudentsController < ApplicationController
        redirect_to new_student_url
     else
        #update current_user.name,current_user.reg_no, current_user.id
-        redirect_to edit_student_url
+        redirect_to edit_student_url(current_user.id)
     end
 
   end
