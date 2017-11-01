@@ -15,40 +15,40 @@
   <body>
   
     <div class="header wrapper1">
-      <strong class="one" style="font-size: 30px;"><%= "Welcome " + current_user.name %></strong>
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'button medium square orange two', :style => ' float:right; margin: 10px; font-family: "Allerta Stencil", Sans-serif; font-weight: 800; ' %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'button medium square orange three', :style => ' float:right; margin: 10px;font-family: "Allerta Stencil", Sans-serif; font-weight: 800; ' %>      
+      <strong class="one" style="font-size: 30px; color:#f44336;"><%= "Welcome " + current_user.name + "!"%></strong>
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'button medium square orange two', :style => ' float:right; margin: 10px; font-family: "Allerta Stencil", Sans-serif; font-weight: 800; color: #d9b310;' %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'button medium square orange three', :style => ' float:right; margin: 10px;font-family: "Allerta Stencil", Sans-serif; font-weight: 800; color: #d9b310;' %>      
     </div>
   
       <div >
         <% if user_signed_in? and current_user.usertype == 0%>       
           <table style="text-align: center; width: 100%;">
             <tr>
-              <td>
+              <td id="except1">
                 <%= link_to "Edit Student Details", edit1_student_path, :class => "random" %>
               </td>    
-              <td>
+              <td id="except1">
                 <%= link_to "Choose Course", choose_course_path, :class => "random"  %>          
               </td>
             </tr>
             <tr >
-              <td >
+              <td id="except1" >
                 <%= link_to "My Courses", student_mycourse_path, :class => "random"  %>
               </td> 
-              <td >
+              <td id="except1" >
                 <%= link_to "Create Team", create_team_path, :class => "random"  %>
               </td>              
             </tr>          
             <tr >
-              <td >
+              <td id="except1" >
                 <%= link_to "Add teammate", add_teammates_path, :class => "random" %>
               </td> 
-              <td >
+              <td id="except1" >
                 <%= link_to "New Project", new_project_path, :class => "random" %>
               </td>              
             </tr>            
             <tr >
-              <td >
+              <td id="except1" >
                 <%= link_to "My Projects", student_myproject_path, :class => "random"  %>
               </td> 
           </table>     
@@ -95,8 +95,21 @@
   }
   td{
     width:50%;
-    height: 45px;
+    height: 35px;
     border-radius: 10px;
+    box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2),
+    inset 0 2px 0 hsla(0, 0%, 100%, 0.1), inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+    inset 0 -0.2em 0 hsla(0, 0%, 100%, 0.1),
+    inset 0 -0.25em 0 hsla(0, 0%, 0%, 0.25),
+    0 0.25em 0.25em hsla(0, 0%, 0%, 0.05);
+    background:#1d2731;
+    padding:20px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight:300;
+    font-size:18px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;  
   }
   .random{
     text-decoration: none;
@@ -106,8 +119,8 @@
     font-size:200%;
     font-family: "Allerta Stencil", Sans-serif; 
     font-weight: 800; 
-    color:#607d8b;
-    padding-top:30px;
+    color:#d9bc10;
+    padding-top:25px;
     margin:10px;
   }
 </style>

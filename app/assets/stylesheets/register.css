@@ -1,6 +1,6 @@
 
 .orange {
-  background-color: #999;
+  background-color: #1d2731;
 }
 
 .square {
@@ -12,7 +12,7 @@
 }
 
 .button {
-  background-image: -webkit-linear-gradient(
+/*  background-image: -webkit-linear-gradient(
     hsla(0, 0%, 100%, 0.05),
     hsla(0, 0%, 0%, 0.1)
   );
@@ -31,7 +31,7 @@
   background-image: linear-gradient(
     hsla(0, 0%, 100%, 0.05),
     hsla(0, 0%, 0%, 0.1)
-  );
+  );*/
   border: none;
   border-radius: 0.5em;
   box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2),
@@ -39,17 +39,19 @@
     inset 0 -0.2em 0 hsla(0, 0%, 100%, 0.1),
     inset 0 -0.25em 0 hsla(0, 0%, 0%, 0.25),
     0 0.25em 0.25em hsla(0, 0%, 0%, 0.05);
-  color: #444;
+  /*color: #d9b310;*/
+  color: #333333;
   cursor: pointer;
   display: inline-block;
   line-height: 1.5;
   padding: 0.5em 1.5em 0.75em;
   position: relative;
-  text-align: middle;
+  text-align: center;
   text-decoration: none;
   text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.25);
   vertical-align: middle;
   font-size:125%;
+  font-weight: bold;
 }
 .button:hover {
   outline: none;
@@ -70,8 +72,9 @@
 
 .header{
 
-  height: 200px;
-  background-color: #ff9100;
+  /*height: 200px;*/
+  margin-bottom: 100px;
+  background-color: #0b3c5d;
   border-radius: 10px
 
 }
@@ -124,8 +127,8 @@
  
 th {
   height: 40px;
-  color:#D5DDE5;;
-  background:#1b1e24;
+  color:#d9b310;;
+  background:#1d2731;
   border-bottom:4px solid #9ea7af;
   border-right: 1px solid #343a45;
   font-size:23px;
@@ -156,8 +159,9 @@ tr {
 }
  
 td:hover {
-  background: #bdbdbd;
-  color:#FFFFFF;
+  /*background: #bdbdbd;*/
+  /*color:#aadada;;*/
+  text-decoration-color: #ffffff;
   border-top: 1px solid #22262e;
 }
  
@@ -181,9 +185,14 @@ tr:last-child td:last-child {
   border-bottom-right-radius:3px;
 }
  
-td {
+td:not(#except1) {
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2),
+  inset 0 2px 0 hsla(0, 0%, 100%, 0.1), inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+  inset 0 -0.2em 0 hsla(0, 0%, 100%, 0.1),
+  inset 0 -0.25em 0 hsla(0, 0%, 0%, 0.25),
+  0 0.25em 0.25em hsla(0, 0%, 0%, 0.05);
   height: 30px;
-  background:#ebebeb;
+  background:#ffffff;
   padding:20px;
   text-align: center;
   vertical-align: middle;
@@ -336,15 +345,18 @@ td.text-right {
 }
 
 .form-basic button{
-    display: block;
+
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
     border-radius: 2px;
-    background-color:  #6caee0;
+    /*background-color:  #6caee0;*/
     color: #ffffff;
     font-weight: bold;
     box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
-    padding: 14px 22px;
+    /*padding: 14px 22px;*/
     border: 0;
-    margin: 40px 183px 0;
+    /*margin: 40px 183px 0;*/
 }
 
 /*  Making the form responsive. Remove this media query
