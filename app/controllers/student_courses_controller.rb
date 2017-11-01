@@ -28,6 +28,8 @@ class StudentCoursesController < ApplicationController
 
     @student_course.student_id = current_user.id
 
+    logger.info student_course_params[:course_id]
+
     respond_to do |format|
       if @student_course.save
         format.html { redirect_to @student_course, notice: 'Student course was successfully created.' }
