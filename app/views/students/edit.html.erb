@@ -3,6 +3,6 @@
 <%= render 'form', student: @student %>
 
 <div style = "text-align:center;">
-	<%= link_to 'Show', @student %> 
-	<%= link_to 'Back', students_path %>
+	<%= link_to 'Show', @student, :class => "button" %> 
+	<%= link_to 'Back', :back, :class => "button" %>
 </div>

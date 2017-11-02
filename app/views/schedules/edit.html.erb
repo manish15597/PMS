@@ -2,5 +2,7 @@
 
 <%= render 'form', schedule: @schedule %>
 
-<%= link_to 'Show', @schedule %> |
-<%= link_to 'Back', schedules_path %>
+<div style = "text-align:center;">
+	<%= link_to 'Show', @schedule, :class => "button" %> 
+	<%= link_to 'Back', schedules_path, :class => "button" %>
+</div>

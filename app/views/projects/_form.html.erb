@@ -37,13 +37,11 @@
 
   <div class="form-row">
     <%= form.label :team_id %>
-    <!--angular_bracket_here_%= form.number_field :team_id, id: :project_team_id %>-->
-
     <%= form.collection_select( :team_id,  StudentTeam.where(:student_id => current_user.id), :team_id, :team_id )%>
 
   </div>
 
-  <div class="actions">
+  <button class=" form-row actions">
     <%= form.submit %>
-  </div>
+  </button>
 <% end %>
