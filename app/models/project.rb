@@ -5,6 +5,8 @@ class Project < ApplicationRecord
 
   validates_uniqueness_of :team_id, scope: :course_id
 
-  has_many :submissions, foreign_key: :project_id, class_name: "Submission"
+  has_many :submissions, foreign_key: :project_id, class_name: "Submission", :dependent => :delete_all
+
+  has_many :schedules, foreign_key: :project_id, class_name: "Schedule", :dependent => :delete_all
 
 end

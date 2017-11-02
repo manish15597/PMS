@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :schedules
   resources :submissions
   resources :projects
   resources :student_teams
@@ -51,5 +52,6 @@ Rails.application.routes.draw do
 
   get "projects/:id/show_submissions" => "submissions#show_project_submissions", :as => "show_project_submissions"
 
-
+  get "users/student/my_project/:id/display_schedule" => "schedules#display_schedule", :as => "display_schedule"
+  get "users/student/my_project/:id/select_schedule" => "schedules#select_schedule", :as => "select_schedule"
 end
