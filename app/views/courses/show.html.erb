@@ -1,15 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p class="form-basic form-row">
   <strong>Course name:</strong>
   <%= @course.course_name %>
 </p>
 
-<p>
+<p class="form-basic form-row">
   <strong>Faculty:</strong>
   <%= @course.faculty.name %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
-<%= link_to 'Show Projects', view_project_path(@course.id) %>
+
+<div style = "text-align:center;">
+	<%= link_to 'Edit', edit_course_path(@course), :class => "button"%>
+	<%= link_to 'Back', :back , :class => "button" %>
+	<%= link_to 'Show Projects', view_project_path(@course.id), :class => "button"%>
+</div>

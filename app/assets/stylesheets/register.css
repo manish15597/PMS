@@ -1,134 +1,405 @@
-body {
-  background: #e9e9e9;
-  color: #666666;
-  font-family: 'RobotoDraft', 'Roboto', sans-serif;
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+.orange {
+  background-color: #1d2731;
 }
 
-/* Pen Title */
-.pen-title {
-  padding: 50px 0;
-  text-align: center;
-  letter-spacing: 2px;
-}
-.pen-title h1 {
-  margin: 0 0 20px;
-  font-size: 48px;
-  font-weight: 300;
-}
-.pen-title span {
-  font-size: 12px;
-}
-.pen-title span .fa {
-  color: #33b5e5;
-}
-.pen-title span a {
-  color: #33b5e5;
-  font-weight: 600;
-  text-decoration: none;
+.square {
+  border-radius: 0.25em;
 }
 
-/* Form Module */
-.form-module {
+.medium {
+  font-size: 1em;
+}
+
+.button {
+/*  background-image: -webkit-linear-gradient(
+    hsla(0, 0%, 100%, 0.05),
+    hsla(0, 0%, 0%, 0.1)
+  );
+  background-image: -moz-linear-gradient(
+    hsla(0, 0%, 100%, 0.05),
+    hsla(0, 0%, 0%, 0.1)
+  );
+  background-image: -ms-linear-gradient(
+    hsla(0, 0%, 100%, 0.05),
+    hsla(0, 0%, 0%, 0.1)
+  );
+  background-image: -o-linear-gradient(
+    hsla(0, 0%, 100%, 0.05),
+    hsla(0, 0%, 0%, 0.1)
+  );
+  background-image: linear-gradient(
+    hsla(0, 0%, 100%, 0.05),
+    hsla(0, 0%, 0%, 0.1)
+  );*/
+  border: none;
+  border-radius: 0.5em;
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2),
+    inset 0 2px 0 hsla(0, 0%, 100%, 0.1), inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+    inset 0 -0.2em 0 hsla(0, 0%, 100%, 0.1),
+    inset 0 -0.25em 0 hsla(0, 0%, 0%, 0.25),
+    0 0.25em 0.25em hsla(0, 0%, 0%, 0.05);
+  /*color: #d9b310;*/
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.5;
+  padding: 0.5em 1.5em 0.75em;
   position: relative;
-  background: #ffffff;
-  max-width: 320px;
-  width: 100%;
-  border-top: 5px solid #33b5e5;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
-}
-.form-module .toggle {
-  cursor: pointer;
-  position: absolute;
-  top: -0;
-  right: -0;
-  background: #33b5e5;
-  width: 30px;
-  height: 30px;
-  margin: -5px 0 0;
-  color: #ffffff;
-  font-size: 12px;
-  line-height: 30px;
   text-align: center;
-}
-.form-module .toggle .tooltip {
-  position: absolute;
-  top: 5px;
-  right: -65px;
-  display: block;
-  background: rgba(0, 0, 0, 0.6);
-  width: auto;
-  padding: 5px;
-  font-size: 10px;
-  line-height: 1;
-  text-transform: uppercase;
-}
-.form-module .toggle .tooltip:before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: -5px;
-  display: block;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid rgba(0, 0, 0, 0.6);
-}
-.form-module .form {
-  display: none;
-  padding: 40px;
-}
-.form-module .form:nth-child(2) {
-  display: block;
-}
-.form-module h2 {
-  margin: 0 0 20px;
-  color: #33b5e5;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1;
-}
-.form-module input {
-  outline: none;
-  display: block;
-  width: 100%;
-  border: 1px solid #d9d9d9;
-  margin: 0 0 20px;
-  padding: 10px 15px;
-  box-sizing: border-box;
-  font-wieght: 400;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-.form-module input:focus {
-  border: 1px solid #33b5e5;
-  color: #333333;
-}
-.form-module button {
-  cursor: pointer;
-  background: #33b5e5;
-  width: 100%;
-  border: 0;
-  padding: 10px 15px;
-  color: #ffffff;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
-}
-.form-module button:hover {
-  background: #178ab4;
-}
-.form-module .cta {
-  background: #f2f2f2;
-  width: 100%;
-  padding: 15px 40px;
-  box-sizing: border-box;
-  color: #666666;
-  font-size: 12px;
-  text-align: center;
-}
-.form-module .cta a {
-  color: #333333;
   text-decoration: none;
+  text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.25);
+  vertical-align: middle;
+  font-size:125%;
+  font-weight: bold;
+}
+.button:hover {
+  outline: none;
+}
+.button:hover,
+.button:focus {
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2),
+    inset 0 2px 0 hsla(0, 0%, 100%, 0.1), inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+    inset 0 -0.2em 0 hsla(0, 0%, 100%, 0.1),
+    inset 0 -0.25em 0 hsla(0, 0%, 0%, 0.25),
+    inset 0 0 0 3em hsla(0, 0%, 100%, 0.2),
+    0 0.25em 0.25em hsla(0, 0%, 0%, 0.05);
+}
+
+
+
+
+
+.header{
+
+  /*height: 200px;*/
+  margin-bottom: 100px;
+  background-color: #0b3c5d;
+  border-radius: 10px
+
+}
+
+.wrapper1 {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(30px, auto);
+}
+.one {
+  margin-top: 20px;
+  margin-left: 10px;
+  grid-column: 1 / 20;
+  grid-row: 1;
+}
+.two { 
+  height: 25px;
+  grid-column: 22 / 27;
+  grid-row: 1 ;
+}
+.three {
+  height: 25px;
+  grid-column: 27 / 31;
+  grid-row: 1 ;
+}
+.big {
+  margin: 50px;
+}
+
+
+
+
+
+
+
+/*** Table Styles **/
+
+.table-fill {
+  text-align: center;
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+ 
+th {
+  height: 40px;
+  color:#d9b310;;
+  background:#1d2731;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding: 10px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  height: 30px;
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+td:hover {
+  /*background: #bdbdbd;*/
+  /*color:#aadada;;*/
+  text-decoration-color: #ffffff;
+  border-top: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+/*tr:nth-child(odd) td {
+  background:#EBEBEB;
+}*/
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 0%, 0.2),
+  inset 0 2px 0 hsla(0, 0%, 100%, 0.1), inset 0 1.2em 0 hsla(0, 0%, 100%, 0.1),
+  inset 0 -0.2em 0 hsla(0, 0%, 100%, 0.1),
+  inset 0 -0.25em 0 hsla(0, 0%, 0%, 0.25),
+  0 0.25em 0.25em hsla(0, 0%, 0%, 0.05);
+  height: 30px;
+  background:#ffffff;
+  padding:20px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight:900;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;  
+  color:#444444;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+
+
+
+
+
+
+.form-basic{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 30px ;
+    box-sizing: border-box;
+
+    background-color:  #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+
+    font: bold 14px sans-serif;
+    text-align: center;
+
+}
+
+.form-basic .form-row{
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.form-basic .form-title-row{
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+/* The form title */
+
+.form-basic h1{
+    display: inline-block;
+    box-sizing: border-box;
+    color:  #4c565e;
+    font-size: 24px;
+    padding: 0 10px 15px;
+    border-bottom: 2px solid #6caee0;
+    margin: 0;
+}
+
+
+.form-basic .form-row > label span{
+    display: inline-block;
+    box-sizing: border-box;
+    color: #5F5F5F;
+    width: 180px;
+    text-align: right;
+    vertical-align: top;
+    padding: 12px 25px;
+}
+
+.form-basic input{
+    color:  #5f5f5f;
+    box-sizing: border-box;
+    width: 240px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 12px;
+    border: 1px solid #dbdbdb;
+}
+
+.form-basic input[type=radio],
+.form-basic input[type=checkbox]{
+    box-shadow: none;
+    width: auto;
+}
+
+.form-basic input[type=checkbox]{
+    margin-top: 13px;
+}
+
+.form-basic select{
+    text-align: center;
+    min-width: 100px;
+    background-color: #ffffff;
+    color:  #5f5f5f;
+    box-sizing: border-box;
+    max-width: 240px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    padding: 12px 8px;
+    border: 1px solid #dbdbdb;
+}
+
+.form-basic textarea{
+    color:  #5f5f5f;
+    box-sizing: border-box;
+    width: 240px;
+    height: 80px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    font: normal 13px sans-serif;
+    padding: 12px;
+    border: 1px solid #dbdbdb;
+    resize: vertical;
+}
+
+.form-basic .form-radio-buttons{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-basic .form-radio-buttons > div{
+    margin-top: 10px;
+}
+
+.form-basic .form-radio-buttons label span{
+    margin-left: 8px;
+    color: #5f5f5f;
+    font-weight: normal;
+}
+
+.form-basic .form-radio-buttons input{
+    width: auto;
+}
+
+.form-basic button{
+
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    /*background-color:  #6caee0;*/
+    color: #ffffff;
+    font-weight: bold;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
+    /*padding: 14px 22px;*/
+    border: 0;
+    /*margin: 40px 183px 0;*/
+}
+
+/*  Making the form responsive. Remove this media query
+    if you don't need the form to work on mobile devices. */
+
+@media (max-width: 600px) {
+
+    .form-basic{
+        padding: 30px;
+        max-width: 480px;
+    }
+
+    .form-basic .form-row{
+        max-width: 300px;
+        margin: 25px auto;
+        text-align: left;
+    }
+
+    .form-basic .form-title-row{
+        margin-bottom: 50px;
+    }
+
+    .form-basic .form-row > label span{
+        display: block;
+        text-align: left;
+        padding: 0 0 15px;
+    }
+
+    .form-basic select{
+        width: 240px;
+    }
+
+    .form-basic input[type=checkbox]{
+        margin-top:0;
+    }
+
+    .form-basic .form-radio-buttons > div{
+        margin: 0 0 10px;
+    }
+
+    .form-basic button{
+        margin: 0;
+    }
+
 }

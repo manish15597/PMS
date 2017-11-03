@@ -2,6 +2,9 @@
 
 <%= render 'form', student_team: @student_team %>
 
-<%= link_to 'Back', "/" %>
+<div style = "text-align:center;">
+	<%= link_to 'Back', "/" , :class => "button"%>
 
-<%= link_to "Create Team", create_team_path, :class => 'navbar-link' %>
+	<%= link_to "Create Team", create_team_path, :class => 'button' %>
+</div>
+

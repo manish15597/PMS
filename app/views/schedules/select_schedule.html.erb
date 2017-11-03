@@ -1,24 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @schd.project_id %>
-</p>
+<div class = "table-fill">	
+	<p>
+	  <strong>Project:</strong>
+	  <%= @schd.project_id %>
+	</p>
 
-<p>
-  <strong>Course:</strong>
-  <%= @schd.course_id %>
-</p>
+	<p>
+	  <strong>Course:</strong>
+	  <%= @schd.course_id %>
+	</p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @schd.start_time %>
-</p>
+	<p>
+	  <strong>Start time:</strong>
+	  <%= @schd.start_time %>
+	</p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @schd.end_time %>
-</p>
+	<p>
+	  <strong>End time:</strong>
+	  <%= @schd.end_time %>
+	</p>
+</div>
 
-
-<%= link_to 'Back', "/" %>
+<div style = "text-align:center;">
+	<%= link_to 'Back', "/" %>
+</div>

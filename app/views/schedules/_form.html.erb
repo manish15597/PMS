@@ -13,23 +13,23 @@
 
 
 
-  <div class="field">
+  <div class="form-basic form-row">
     <%= form.label :course_id %>
     <%= form.select :course_id, options_for_select(Course.where(:faculty_id => current_user.id).map{ |x| [ x.course_name, x.id] }  )%>
   </div>
   </div>
 
-  <div class="field">
+  <div class="field" , style="text-align: center;">
     <%= form.label :start_time %>
     <%= form.datetime_select :start_time, id: :schedule_start_time %>
   </div>
 
-  <div class="field">
+  <div class="field", style="text-align: center;">
     <%= form.label :end_time %>
     <%= form.datetime_select :end_time, id: :schedule_end_time %>
   </div>
 
-  <div class="actions">
+  <div class="form-basic form-row actions">
     <%= form.submit %>
   </div>
 <% end %>

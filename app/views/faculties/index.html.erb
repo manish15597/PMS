@@ -2,11 +2,10 @@
 
 <h1>Faculties</h1>
 
-<table>
+<table class="table-fill">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Users</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +14,6 @@
     <% @faculties.each do |faculty| %>
       <tr>
         <td><%= faculty.name %></td>
-
         <td><%= link_to 'Show', faculty %></td>
         <td><%= link_to 'Edit', edit_faculty_path(faculty) %></td>
         <td><%= link_to 'Destroy', faculty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +24,7 @@
 
 <br>
 
-<%= link_to 'New Faculty', new_faculty_path %>
+<div style = "text-align:center;">
+  <%= link_to 'New Faculty', new_faculty_path, :class => "button" %>
+</div>
+

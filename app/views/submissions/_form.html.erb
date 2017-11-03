@@ -1,4 +1,4 @@
-<%= form_with(model: submission, local: true) do |form| %>
+<%= form_with(model: submission, local: true, :class => "form-basic") do |form| %>
   <% if submission.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(submission.errors.count, "error") %> prohibited this submission from being saved:</h2>
@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-row">
     <%= form.label :project_id %>
 
     <%= params[:id] %>
     <%= form.hidden_field :project_id ,:submission_project_id => params[:id] %>
   </div>
 
-  <div class="field">
+  <div class="form-row">
     <%= form.label :abstract %>
     <%= form.text_area :abstract, id: :submission_abstract if Student.where(users_id: current_user.id).size == 1 %>
 
@@ -27,7 +27,7 @@
   </div>
 
 
-   <div class="field">
+   <div class="form-row">
 
      <%= form.label :feedback if Faculty.where(users_id: current_user.id).size == 1 %>
      <%= form.text_area :feedback, id: :submission_feedback if Faculty.where(users_id: current_user.id).size == 1 %>
@@ -35,7 +35,7 @@
   </div>
 
 
-  <div class="actions">
+  <div class="form-row actions">
     <%= form.submit %>
   </div>
 <% end %>

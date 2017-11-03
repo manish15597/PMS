@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<p class="form-basic form-row">
   <strong>Name:</strong>
   <%= @faculty.name %>
 </p>
 
-<p>
+<p class="form-basic form-row">
   <strong>Users:</strong>
   <%= @faculty.users %>
 </p>
 
-<%= link_to 'Edit', edit_faculty_path(@faculty) %> |
-<%= link_to 'Back', faculties_path %>
+<div style = "text-align:center;">
+	<%= link_to 'Edit', edit_faculty_path(@faculty), :class => "button" %> 
+	<%= link_to 'Back', :back, :class => "button" %>
+</div>

@@ -1,4 +1,4 @@
-<%= form_with(model: project, local: true) do |form| %>
+<%= form_with(model: project, local: true, :class => "form-basic") do |form| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-row">
     <%= form.label :title %>
     <%= form.text_field :title, id: :project_title %>
   </div>
 
-  <div class="field">
+  <div class="form-row">
     <%= form.label :abstract %>
     <%= form.text_area :abstract, id: :project_abstract %>
   </div>
 
-  <div class="field">
+  <div class="form-row">
     <%= form.label :isapproved %>
     <%= form.label "NO" %>
   </div>
 
-  <div class="field">
+  <div class="form-row">
     <%= form.label :course_id %>
 
 
@@ -35,15 +35,13 @@
 
   </div>
 
-  <div class="field">
+  <div class="form-row">
     <%= form.label :team_id %>
-    <!--angular_bracket_here_%= form.number_field :team_id, id: :project_team_id %>-->
-
     <%= form.collection_select( :team_id,  StudentTeam.where(:student_id => current_user.id), :team_id, :team_id )%>
 
   </div>
 
-  <div class="actions">
+  <button class=" form-row actions">
     <%= form.submit %>
-  </div>
+  </button>
 <% end %>

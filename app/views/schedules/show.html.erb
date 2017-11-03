@@ -1,24 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @schedule.project_id %>
-</p>
+<div class="form-basic">  
+  <p>
+    <strong>Project:</strong>
+    <%= @schedule.project_id %>
+  </p>
 
-<p>
-  <strong>Course:</strong>
-  <%= @schedule.course_id %>
-</p>
+  <p>
+    <strong>Course:</strong>
+    <%= @schedule.course_id %>
+  </p>
 
-<p>
-  <strong>Start time:</strong>
-  <%= @schedule.start_time %>
-</p>
+  <p>
+    <strong>Start time:</strong>
+    <%= @schedule.start_time %>
+  </p>
 
-<p>
-  <strong>End time:</strong>
-  <%= @schedule.end_time %>
-</p>
+  <p>
+    <strong>End time:</strong>
+    <%= @schedule.end_time %>
+  </p>
+</div>
 
-<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
-<%= link_to 'Back', :back %>
+<div style = "text-align:center;">
+	<%= link_to 'Edit', edit_schedule_path(@schedule), :class => "button" %> |
+	<%= link_to 'Back', :back, :class => "button" %>
+</div>
+

@@ -1,6 +1,9 @@
-<h1>Editing Project</h1>
+<h1 >Editing Project</h1>
 
 <%= render 'form', project: @project %>
 
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', "/" %>
+<div style = "text-align:center;">
+	<%= link_to 'Show', @project, :class => "button" %> 
+	<%= link_to 'Back', "/", :class => "button" %>
+</div>
+

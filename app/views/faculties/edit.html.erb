@@ -2,5 +2,8 @@
 
 <%= render 'form', faculty: @faculty %>
 
-<%= link_to 'Show', @faculty %> |
-<%= link_to 'Back', faculties_path %>
+<div style = "text-align:center;">
+	<%= link_to 'Show', @faculty, :class => "button" %> 
+	<%= link_to 'Back', :back, :class => "button" %>
+</div>
+

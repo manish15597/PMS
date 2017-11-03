@@ -1,32 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
+<p class="form-basic form-row">
+  <strong>Title:</strong><br>
   <%= @project.title %>
 </p>
 
-<p>
-  <strong>Abstract:</strong>
+<p class="form-basic form-row">
+  <strong>Abstract:</strong><br>
   <%= @project.abstract %>
 </p>
 
-<p>
+<p class="form-basic form-row">
   <strong>Isapproved:</strong>
   <%= @project.isapproved %>
 </p>
 
-<p>
+<p class="form-basic form-row">
   <strong>Course:</strong>
-  <%= @project.course_id %>
+  <%= Course.find( @project.course_id).course_name %>
 </p>
 
-<p>
+<p class="form-basic form-row">
   <strong>Team:</strong>
-  <%= @project.team_id %>
+  <%= Team.find(@project.team_id).name %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %>
-<%= link_to 'Back', student_myproject_path %>
-<%= link_to 'Submission', make_submit_path(@project.id) if @project.isapproved == "YES" and Student.where(users_id: current_user.id).size == 1%>
+<div style = "text-align:center;">
+  <%= link_to 'Edit', edit_project_path(@project) , :class => "button" %>
+  <%= link_to 'Back', :back , :class => "button" %>
+  <%= link_to 'Submission', make_submit_path(@project.id), :class => "button" if @project.isapproved == "YES" and Student.where(users_id: current_user.id).size == 1 %>
 
-<%= link_to 'Check Submission', show_project_submissions_path(@project.id) if @project.isapproved == "YES" and Faculty.where(users_id: current_user.id).size == 1%>
+  <%= link_to 'Check Submission', show_project_submissions_path(@project.id), :class => "button" if @project.isapproved == "YES" and Faculty.where(users_id: current_user.id).size == 1 %>
+</div>
