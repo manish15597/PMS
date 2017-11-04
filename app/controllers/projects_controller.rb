@@ -60,16 +60,8 @@ class ProjectsController < ApplicationController
   def approve
     @project = Project.find(params[:id])
     @project.update(isapproved: "YES")
-    
-    respond_to do |format|
-      format.js {render inline: "location.reload();" }
-    end
-    # redirect_to "/users/facuty/#{@project.course_id}/view_project"
 
-    render(
-      html: "<script>sweetAlert('No users!')</script>".html_safe,
-      layout: 'application'
-    )
+    redirect_to "/users/facuty/#{@project.course_id}/view_project"
 
   end
 
