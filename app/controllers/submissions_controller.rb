@@ -63,7 +63,12 @@ class SubmissionsController < ApplicationController
   end
 
   def show_project_submissions
-    @ps = Submission.where(project_id: params[:id])
+    #if( current_user.usertype == 1)
+      @ps = Submission.where(project_id: params[:id])
+    #else
+      #@ps = Submission.where(:project_id => Project.where(:team_id => StudentTeam.where(:student_id => current_user.id)))
+    #end
+
   end
 
   def feedback

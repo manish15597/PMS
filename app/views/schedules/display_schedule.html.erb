@@ -25,6 +25,6 @@
 <br>
 
 <div style = "text-align:center;">
-  <%= link_to 'New Schedule', new_schedule_path, :class => "button" %>
+  <%= link_to 'New Schedule', new_schedule_path, :class => "button" if current_user.usertype == 1%>
 </div>
 

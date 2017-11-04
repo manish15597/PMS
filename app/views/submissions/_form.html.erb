@@ -19,11 +19,12 @@
   </div>
 
   <div class="form-row">
-    <%= form.label :abstract %>
-    <%= form.text_area :abstract, id: :submission_abstract if Student.where(users_id: current_user.id).size == 1 %>
+    <%= form.label :report_and_files %>
 
-    <%=  Project.find(params[:id]).abstract if Faculty.where(users_id: current_user.id).size == 1 %>
-    <%= form.hidden_field :abstract ,:submission_abstract => Project.find(params[:id]).abstract if Faculty.where(users_id: current_user.id).size == 1 %>
+    <%= form.text_area :report, id: :submission_report if Student.where(users_id: current_user.id).size == 1 %>
+
+    <%=  Submission.find(params[:id]).report if Faculty.where(users_id: current_user.id).size == 1 %>
+    <%= form.hidden_field :report ,:submission_abstract => Submission.find(params[:id]).report if Faculty.where(users_id: current_user.id).size == 1 %>
   </div>
 
 
