@@ -26,7 +26,7 @@ $pid
   def create
     @schedule = Schedule.new(schedule_params)
 
-    @schedule.project_id = 12;
+    @schedule.project_id = 1;
 
     respond_to do |format|
       if @schedule.save
@@ -64,17 +64,17 @@ $pid
   end
 
   def display_schedule
-    @schd = Schedule.where(:course_id => Project.find(params[:id]).course_id)
+    @schd = Schedule.where(:course_id => Project.find(params[:id]).course_id ,:project_id => 1)
     $pid = params[:id]
   end
 
   def select_schedule
     @schd = Schedule.find(params[:id])
-    if Schedule.where(:project_id => $pid).nil?
+    if (Schedule.where(:project_id => $pid).size==0 and @schd.project_id == 1)
        @schd.update_attributes(:project_id => $pid)
        flash[:notice] = "Slot successfully alloted"
     else
-      flash[:snotice] = "Slot already taken"
+      flash[:notice] = "Slot already taken"
     end
     #redirect_to "/users/student/my_project/#{@schd.project_id}/select_schedule"
 

@@ -6,7 +6,7 @@
 </p>
 
 <p class="form-basic form-row">
-  <strong>Report:</strong>
+  <strong>Report and Files:</strong>
   <%= @submission.report %>
 </p>
 
@@ -17,6 +17,6 @@
 
 
 <div style = "text-align:center;">
-	<%= link_to "My Projects", student_myproject_path, :class => "button" %>
+	<%= link_to "My Projects", student_myproject_path, :class => "button"  if current_user.usertype == 0 %>
 </div>
 

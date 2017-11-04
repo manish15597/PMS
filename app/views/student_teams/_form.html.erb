@@ -13,8 +13,11 @@
 
   <div class="form-row">
     <%= form.label :student_id %>
-    <%= form.number_field :student_id, id: :student_team_student_id %>
-  </div>
+
+
+    <%= form.select :student_id, options_for_select(Student.where.not(:users_id => current_user.id).map{ |x| [ x.name, x.users_id] }  )%>
+
+     </div>
 
   <div class="form-row">
     <%= form.label :team_id %>

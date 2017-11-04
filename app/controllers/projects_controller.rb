@@ -61,8 +61,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.update(isapproved: "YES")
 
-    redirect_to "/users/facuty/#{@project.course_id}/view_project"
-
+    redirect_to "/users/faculty/#{@project.course_id}/view_project"
   end
 
   def indexStu

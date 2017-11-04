@@ -6,7 +6,7 @@
   <thead>
   <tr>
     <th>Project</th>
-    <th>Report</th>
+    <th>Report and Files</th>
     <th>Feedback</th>
     <th colspan="3"></th>
   </tr>
@@ -18,7 +18,7 @@
         <td><%= submission.project_id %></td>
         <td><%= submission.report %></td>
         <td><%= submission.feedback %></td>
-        <td><%= link_to 'Give Feedback', edit_submission_path(submission) %></td>
+        <td><%= link_to 'Give Feedback', edit_submission_path(submission) if current_user.usertype == 1 %></td>
 
       </tr>
   <% end %>
